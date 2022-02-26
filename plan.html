@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>Wonderful War World 部署计划书</title> 
+</head>
+<body>
+
+<p>WonderfulWarWorld部署计划：
+第一部分（总体规划）
+WonderfulWarWorld模拟的是现代战争，主要以海战为主（包括岛屿的抢滩登陆和港口战役），在第二阶段将会全面支持现代战争，在专业版将会支持“协议”内的mod和资源，目前规划的WonderfulWarWorld将会支持网络模式（但需要自主架设服务器），预计2.5阶段可以支持快速网络模式即p2p内网穿透传输。
+目前第一阶段的最低硬件要求：
+E系列奔腾处理器，512MB系统内存，板载集成显卡，WindowsXP，1GB磁盘空间
+可选项：
+更好的显卡，CPU，更多内存以及磁盘空间，网络速度达到5Mb以上
+第二阶段：
+corei3-320，512MB游戏内存，板载显卡，Windows7，2GB磁盘空间，要求系统必须支持.net3.0以上。
+可选项：
+同第一阶段可选项（网络到达10Mb以上）
+第三阶段：
+core i3，2GB系统内存，HD4000核芯显卡，Windows7及以上（建议Windows10或11），3GB磁盘空间，系统需要支持.net4.0以上版本
+可选项：同第二阶段可选项（网络达到15Mb以上）
+主要制作人：207（代号表示未解密）
+制作总策划组组长：207
+绘图人员：番茄酱
+多媒体音影视频制作：714
+协助人员：菌丝
+
+
+
+签名：207（批准核验APPROVE）
+第二部分（开发部分）
+第一阶段：使用Visual Basic和C++编写，图像图形全部使用贴图和简易功能实现,内部接口全部使用“秦”级，网络部分使用WINSOCK部件实现的tcp和udp协议。为了能够尽可能缩短时间，部分细节会暂时粗糙化，通过补丁更新实现完善。
+开发软件：Visual Basic 6.0  Visual C++ 6.0
+          Visual Studio 2019 Visual Studio    Code(编程部分)
+          Photoshop 2022 (图形部分)
+         
+
+第二阶段：使用Visual C++编写，重要图像全部用DX引擎渲染，余下部分使用细腻贴图，内部接口改用“汉”级接口，部分支持多线程（“汉”级仍然是“秦”级的改进版，注意：这里只保留了“秦”级的设计理念和逻辑，在算法上和开发兼容性已有很大区别），网络通讯方式采用WIN点对点技术进行实验SOCKapi实现并进行部分重封装，将p2p。
+
+第三阶段：使用Visula C++编写，利用第二阶段的DX渲染框架作为基础，放弃绝大部分的贴图文件。
+
+
+
+
+签名：207（批准核验APPROVE）
+第三部分
+游戏资源算法：传统可执行文件内部实现+含有特定协议的api接口（即“秦”级等接口协议），使用dlls返回资源文件目录和建模目录（含配方式）目前“秦”采用了装载协议，理论上可以支持在协议内的所有资源。
+补充：“秦”级以及其他接口将会预留mod的高级扩展功能，在不同的接口下除了“秦”级以外，剩余的接口理论上可以通过兼容设置支持前期mod扩展
+
+
+
+签名：207（批准核验APPROVE）
+第四部分
+“秦”级接口：封装api（分装）
+主要内容：usen.dll(用户数据部分)
+         shipai.dll(人机ai)
+         modsup.dll(mod解释器)
+         hurt.dll(伤害计算器)
+         md5.dll(安全加密)
+         bye.dll(会话支持库)
+         smile.dll(提供文件操作)
+         physics.dll(物理引擎)
+         language.exe(语言资源管理器)
+         manager.dll（协调管理器)
+         bc.exe(mod“编译”器-双模式)
+         wwwdebug.exe(命令行下调试或高级模式-仅控制台纯英文)
+         zip.dll(文件压缩与解压)
+         modmaker(mod制作器)
+            内含：packet.exe(打包发布器)
+                  pic.dll(算法生成器)
+                  helper.exe(帮助器)
+                  per.exe(适配调试模拟-控制台)
+                  man.exe(mod制作器主界面)
+                  killer.dll(游戏运行时保护器)
+          network(网络部分)
+          winsockapo.dll(WINSOCKapi封装)
+          list.exe(服务监听程序-控制台）
+          server.exe(服务端)
+          server.dll(服务端扩展）
+          netdata.exe(网络日志管理器-控制台)
+         datasafe(数据安全)
+            内含：recorder.dll(事件记录器)
+                  data.dll(日志描述器)
+                  keeper.exe(备份转储器-控制台)
+                  regf.exe(注册信息提取器-双模式)
+                  regh.dll(注册信息提取器扩展)
+         goodgit（资源库）
+                 wwwexplorer.exe(资源管理器)
+                 protecter.dll(资源保护器)
+                 pictures（图片库）
+                 sounds（声音库）
+                 videos（视频媒体库）
+                 settings（设置文件库）
+                 language（语言库）
+                   
+</p>
+
+</body>
+</html>
