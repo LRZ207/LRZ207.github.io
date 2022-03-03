@@ -38,15 +38,15 @@
 　　             if(state) {
 　　　　          alert("您好，当前处于联网状态");
 　　             }else {
-　　　　          alert("当前处于断网状态");
+　　　　          alert("当前处于断网状态，请修复连接");
 　　             }
 　　            //当联网的时候触发该事件
 　　             window.ononline=function () {
-　　　        　 alert("在线");
+　　　        　 alert("网络正常");
 　　            }
 　　            //当断网的时候触发该事件
 　　            window.onoffline=function() {
-　　　　         alert("断网");
+　　　　         alert("网络连接已断开，请重新连接");
 　　            }
                </script>
 		<script>
