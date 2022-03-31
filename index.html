@@ -1,58 +1,65 @@
 <!doctype html>
 <html>
-	<head> 
-                
-                 <embed src="./dk.mp3" autostart="true" loop="true" hidden="true"></embed>
-		<meta charset="utf-8" />
-		<title>这里将为LRZ点亮</title>
-		<meta name="keywords" content="关键词，关键字">
-		<meta name="description" content="描述信息">
-		<style>
-			body 
-                            {  
-                                background-color:#b0c4de;
-				margin: 0;
-				overflow: hidden;
-			     }
-                        h1
-                          {
-                           color:orange;
-                           text-align:center;
-                          }
-                       p 
-                         {front-size:18px;
-                          border-style:solid;
-	                  border-top-width:15px;
-                         }
-		</style>
-	</head>
- 
-	<body>
-              <h1>测试</h1>
-              <p>有关Wonderful War World 团队的信息：目前部分内容将会转移到此处。目前应该开展资料搜集工作，如果访客是计划外人员想要提供支持，也可以通过私信联系我</p>
-              <p>具体信息：<a href="update.html">点这</a></p>
-              <p>部署书：<a href="plan.html">撸这里</a></p>
-		<script type="text/javascript">
-　　             //获取当前网络状态
-　　             var state=window.navigator.onLine;
-　　             if(state) {
-　　　　          alert("您好，当前处于联网状态");
-　　             }else {
-　　　　          alert("当前处于断网状态，请修复连接");
-　　             }
-　　            //当联网的时候触发该事件
-　　             window.ononline=function () {
-　　　        　 alert("网络正常 ");
-　　            }
-　　            //当断网的时候触发该事件
-　　            window.onoffline=function() {
-　　　　         alert("网络连接已断开，请重新连接");
-　　            }
-               </script>
-		<script>
-			
-                        alert("Hello,World!");
-                </script>
-                <script language=JavaScript> <!-- var caution = false function setCookie(name, value, expires, path, domain, secure){undefined var curCookie = name + "=" + escape(value) + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "") if (!caution || (name + "=" + escape(value)).length<= 4000) document.cookie = curCookie else if (confirm("Cookie exceeds 4KB and will be cut!")) document.cookie = curCookie } function getCookie(name) {undefined var prefix = name + "=" var cookieStartIndex = document.cookie.indexOf(prefix) if (cookieStartIndex == -1) return null var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex+ prefix.length) if (cookieEndIndex == -1) cookieEndIndex = document.cookie.length return unescape(document.cookie.substring(cookieStartIndex +prefix.length, cookieEndIndex)) }function deleteCookie(name, path, domain) {undefined if (getCookie(name)) {undefined document.cookie = name + "=" + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT" } } function fixDate(date) {undefined var base = new Date(0) var skew = base.getTime() if (skew > 0) date.setTime(date.getTime() - skew) } var now = new Date() fixDate(now) now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000) var visits = getCookie("counter") if (!visits) visits = 1 else visits = parseInt(visits) + 1 setCookie("counter", visits, now) document.write("您是第" + visits + "位访问本专题的！") // --> </script>
-	</body>
+
+<head>
+
+    <embed src="./dk.mp3" autostart="true" loop="true" hidden="true"></embed>
+    <meta charset="utf-8" />
+    <title>这里将为LRZ点亮</title>
+    <meta name="keywords" content="关键词，关键字">
+    <meta name="description" content="描述信息">
+    <style>
+        body {
+            background-color: #b0c4de;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        h1 {
+            color: orange;
+            text-align: center;
+        }
+        
+        p {
+            front-size: 18px;
+            border-style: solid;
+            border-top-width: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>测试</h1>
+    <p>有关Wonderful War World 团队的信息：目前部分内容将会转移到此处。目前应该开展资料搜集工作，如果访客是计划外人员想要提供支持，也可以通过私信联系我</p>
+    <p>具体信息：<a href="./htmls/update.html">点这</a></p>
+    <p>部署书：<a href="./htmls/plan.html">撸这里</a></p>
+    <script type="text/javascript">
+        //获取当前网络状态
+        　　
+        var state = window.navigator.onLine;　　
+        if (state) {　　　　
+            alert("您好，当前处于联网状态");　　
+        } else {　　　　
+            alert("当前处于断网状态，请修复连接");　
+        }　　 //当联网的时候触发该事件
+        　　
+        window.ononline = function() {　　　　
+                alert("网络正常 ");　　
+            }　　 //当断网的时候触发该事件
+            　　
+        window.onoffline = function() {　　　　
+            alert("网络连接已断开，请重新连接");　　
+        }
+    </script>
+    <script>
+        alert("Hello,World!");
+    </script>
+    <button type="button" onclick="nothingFunction()" 千万别点></button>
+    <script>
+        function nothingFunction() {
+            alert("什么都不会发生。");
+        }
+    </script>
+</body>
+
 </html>
