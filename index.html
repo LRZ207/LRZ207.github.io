@@ -2,13 +2,20 @@
 <html>
 
 <head>
-
     <embed src="./dk.mp3" autostart="true" loop="true" hidden="true"></embed>
     <meta charset="utf-8" />
-    <title>这里将为LRZ点亮</title>
+    <title>莫要乱点</title>
     <meta name="keywords" content="关键词，关键字">
     <meta name="description" content="描述信息">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
+        #grad1 {
+            height: 200px;
+            background-color: red;
+            /* 浏览器不支持时显示 */
+            background-image: linear-gradient(#e66465, #9198e5);
+        }
+        
         body {
             background-color: #b0c4de;
             margin: 0;
@@ -22,46 +29,99 @@
         
         p {
             front-size: 18px;
-            border-style: solid;
-            border-top-width: 15px;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .aa {
+            font-family: "宋体";
+            font-size: medium;
+            font-style: normal;
+            line-height: normal;
+            font-weight: bolder;
+            font-variant: normal;
+            text-transform: capitalize;
+            color: #000;
+            background-attachment: scroll;
+            background-color: #B0C4DE;
+            background-image: none;
+            background-repeat: no-repeat;
+        }
+        
+        #test {
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            height: auto;
+            width: auto;
         }
     </style>
 </head>
 
 <body>
-    <h1>测试</h1>
-    <p>有关Wonderful War World 团队的信息：目前部分内容将会转移到此处。目前应该开展资料搜集工作，如果访客是计划外人员想要提供支持，也可以通过私信联系我</p>
+    <h1><b>Wonderful War World</b></h1>
+    <p><b>这里拥有关于WonderfulWar</b>World的基本信息。</p>
     <p>具体信息：<a href="./htmls/update.html">点这</a></p>
     <p>部署书：<a href="./htmls/plan.html">撸这里</a></p>
-    <p> <a href="./dk.mp3">点击下载黑暗森林</a></p>
-    <p> <a href="./nv.mp3">点击下载夜航星</a></p>
-    <script type="text/javascript">
-        //获取当前网络状态
-        　　
-        var state = window.navigator.onLine;　　
-        if (state) {　　　　
-            alert("您好，当前处于联网状态");　　
-        } else {　　　　
-            alert("当前处于断网状态，请修复连接");　
-        }　　 //当联网的时候触发该事件
-        　　
-        window.ononline = function() {　　　　
-                alert("网络正常 ");　　
-            }　　 //当断网的时候触发该事件
+    <p>下载编译版本 ：目前暂时不提供
+        <div align="left"></div>
+        <p> <a href="./dk.mp3 ">点击下载黑暗森林</a></p>
+        <p> <a href="./nv.mp3 ">点击下载夜航星</a>
+            <div></div>
+        </p>
+        <script type="text/javascript ">
+            //获取当前网络状态
             　　
-        window.onoffline = function() {　　　　
-            alert("网络连接已断开，请重新连接");　　
-        }
-    </script>
-    <script>
-        alert("Hello,World!");
-    </script>
-    <button type="button" onclick="nothingFunction()">千万别点</button>
-    <script>
-        function nothingFunction() {
-            alert("什么都不会发生。");
-        }
-    </script>
+            var state = window.navigator.onLine;　　
+            if (state) {　　　　
+                alert("您好，当前处于联网状态 ");　　
+            } else {　　　　
+                alert("当前处于断网状态，请修复连接 ");　
+            }　　 //当联网的时候触发该事件
+            　　
+            window.ononline = function() {　　　　
+                    alert("网络正常 ");　　
+                }　　 //当断网的时候触发该事件
+                　　
+            window.onoffline = function() {　　　　
+                    alert("网络连接已断开，请重新连接 ");　　
+                }
+                <!---- 通过api获取本机ip>
+            $.ajax({
+                url: "./data/test.json",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    displayData(data)
+                }
+            });
+
+
+            function nothingFunction() {
+                alert("什么都不会发生就怪了。 ")
+            };
+        </script>
+
+        </script>>
+        <button type="button " onclick="nothingFunction() " class="button">千万别点</button>
+        <button type="button " onclick="aaa()" class="button">古董模式</button>
+        <div class="test" id="test"></div>
+        <form name="form" id="form">
+            （技术爆炸 ）
+        </form>
+
 </body>
 
 </html>
