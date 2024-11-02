@@ -1,0 +1,113 @@
+<style>
+    /*--prepare---*/ 
+    body { padding:0px;margin: 0px; } 
+    #lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
+    #lyrow { height:100vh;width: 100vw; } 
+    #lyrow div { min-height: 18px;  } 
+    #lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
+    #lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
+    /*--edit--*/ 
+    #lyrow .mainbody { padding:170px 0 0 0;display:inline !important;overflow-x:auto;overflow-y:auto;position:undefined;z-index:undefined;background:undefined;filter:undefined; } 
+    #lyrow .mainbody::-webkit-scrollbar { display:none; } 
+    
+    </style>
+    <!--download button-->
+    <!--https://www.58html.com/html/template/font-awesome.zip-->
+    <link rel="stylesheet" href="https://www.58html.com/gui/css/font-awesome/css/font-awesome.css">
+    <div id="lyrow">
+    
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Loading...</title>
+        <meta name="keywords" content="Characters,">
+        <meta name="description" content="description">
+        <meta name="lrz" content="402rd">
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+        
+            
+    </head>       
+    <div ></div>
+    <div ></div>
+    <select id="languageSwitcher">
+    
+        <option value="cn">简体中文</option>
+    
+    
+        <option value="en">English</option>
+        <!--//Add more language options here-->
+        <option value="jp">日本語</option>
+        
+        <option value="de">Deutsch</option>
+    
+    
+    
+    </select>
+    <!--When the language switcher is changed, the page is reloaded with the new language-->
+    <script>            
+        $(document).ready(function() {
+            $("#languageSwitcher").change(function() {
+                var language = $(this).val();
+                window.location.href = language + ".html";
+            });
+        });
+    </script>
+    
+    
+    
+    <p>Build time：2022</p>
+    <p>Upgrade time：2024-11-02</p>
+    <p>Version:0.4.15.20241102_base</p>
+    <p class="page_index";front-size:40px>Any questions pleasewrite to：v72006@outlook.com</p>
+        <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">更新说明</a>
+        <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
+        
+    </div>
+    <body>
+        
+        
+            <script type="text/javascript ">
+                //Get the online status of the user
+                　　
+                var state = window.navigator.onLine;　　
+                if (state) {　　　　
+                    alert("Hello,you are online ");　　
+                } else {　　　　
+                    alert("Now,you are not online ,please check your network ");　
+                }　　 //While the user is online, the ononline event is triggered.
+                　　
+                window.ononline = function() {　　　　
+                        alert("Network connection is back ");　　
+                    }　　 //while the user is notonline ,the onoffline event is triggered.
+                    　　
+                window.onoffline = function() {　　　　
+                        alert(" Network connection is lost  ");　　
+                    }
+                    
+                $.ajax({
+                    url: "./data/test.json",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        displayData(data)
+                    }
+                });
+    
+    
+                function nothingFunction() {
+                    alert("Nothing function! ")
+                };
+            </script>
+    
+            
+            <button type="button " onclick="nothingFunction() " class="button">千万别点</button>
+            <button type="button " onclick="aaa()" class="button">这个没用</button>
+            <div class="test" id="test"></div>
+            <form name="form" id="form">
+                powered by LRZ
+            </form>
+    
+    </body>
+    

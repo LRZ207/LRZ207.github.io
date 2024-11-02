@@ -1,0 +1,114 @@
+<style>
+    /*--预设--*/ 
+    body { padding:0px;margin: 0px; } 
+    #lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
+    #lyrow { height:100vh;width: 100vw; } 
+    #lyrow div { min-height: 18px;  } 
+    #lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
+    #lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
+    /*--编辑--*/ 
+    #lyrow .mainbody { padding:170px 0 0 0;display:inline !important;overflow-x:auto;overflow-y:auto;position:undefined;z-index:undefined;background:undefined;filter:undefined; } 
+    #lyrow .mainbody::-webkit-scrollbar { display:none; } 
+    
+    </style>
+    <!--下载font-awesome.css图标包-->
+    <!--https://www.58html.com/html/template/font-awesome.zip-->
+    <link rel="stylesheet" href="https://www.58html.com/gui/css/font-awesome/css/font-awesome.css">
+    <div id="lyrow">
+    
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>ロード</title>/
+        <meta name="keywords" content="キーワード">
+        <meta name="description" content="説明情報
+        ">
+        <meta name="lrz" content="402rd">
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+        
+            
+    </head>       
+    <div ></div>
+    <div ></div>
+    <select id="languageSwitcher">
+    
+        <option value="cn">简体中文</option>
+    
+    
+        <option value="en">English</option>
+        
+        <option value="jp">日本語</option>
+        
+        <option value="de">Deutsch</option>
+    
+    
+    
+    </select>
+    
+    <script>            
+        $(document).ready(function() {
+            $("#languageSwitcher").change(function() {
+                var language = $(this).val();
+                window.location.href = language + ".html";
+            });
+        });
+    </script>
+    
+    
+    
+    <p>設立年月日：2022</p>
+    <p>更新日：2024-11-02</p>
+    <p>Version:0.4.15.20241102_base</p>
+    <p class="page_index";front-size:40px>何か言いたいことがあれば、メールを書いてください：v72006@outlook.com</p>
+        <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">アップデートノート</a>
+        <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
+        
+    </div>
+    <body>
+        
+        
+            <script type="text/javascript ">
+                
+                　　
+                var state = window.navigator.onLine;　　
+                if (state) {　　　　
+                    alert("こんにちは、現在ネットワーク化されています ");　　
+                } else {　　　　
+                    alert("ネットワークは現在切断されています。接続を修復してください ");　
+                }　　 
+                　　
+                window.ononline = function() {　　　　
+                        alert("ネットワークは正常です ");　　
+                    }　　
+                    　　
+                window.onoffline = function() {　　　　
+                        alert("ネットワーク接続が切断されました。再接続してください ");　　
+                    }
+                    
+                $.ajax({
+                    url: "./data/test.json",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        displayData(data)
+                    }
+                });
+    
+    
+                function nothingFunction() {
+                    alert("何も起こらないのも不思議ではありません。 ")
+                };
+            </script>
+    
+            
+            <button type="button " onclick="nothingFunction() " class="button">千万别点</button>
+            <button type="button " onclick="aaa()" class="button">这个没用</button>
+            <div class="test" id="test"></div>
+            <form name="form" id="form">
+                powered by LRZ
+            </form>
+    
+    </body>
+    
