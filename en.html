@@ -49,10 +49,13 @@
     <script>            
         $(document).ready(function() {
             $("#languageSwitcher").change(function() {
-                if (language=="cn"){windows.location.href="index.html";}
+                
                 var language = $(this).val();
-                window.location.href = language + ".html";
-                $("#languageSwitcher").val(language);
+                if (language =="cn") {
+                window.location.href = "index.html";
+            }else{
+                location.href = language + ".html";
+            }
             
             });
         });

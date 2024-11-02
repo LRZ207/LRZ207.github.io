@@ -54,8 +54,10 @@ body { padding:0px;margin: 0px; }
             //选中“简体中文时”打开index.html
             if (language =="cn") {
                 window.location.href = "index.html";
+            }else{
+                location.href = language + ".html";
             }
-            window.location.href = language + ".html";
+            
             //修改languageSwitcher的内容为language
             
 
