@@ -45,21 +45,33 @@ body { padding:0px;margin: 0px; }
 
 
 </select>
-<!--当语言选项被点击打开对应语言的页面文件-->
+<!--当语言选项被点击打开对应语言的页面文件并将语言选项改为选中状态-->
+
 <script>            
     $(document).ready(function() {
         $("#languageSwitcher").change(function() {
             var language = $(this).val();
+            //选中“简体中文时”打开index.html
+            if (language =="cn") {
+                window.location.href = "index.html";
+            }
             window.location.href = language + ".html";
+            //修改languageSwitcher的内容为language
+            
+
+
         });
     });
 </script>
 
 
 
+
+
+
 <p>建立日期：2022</p>
 <p>更新日期：2024-11-02</p>
-<p>Version:0.4.15.20241102_base</p>
+<p>Version:0.4.16.20241102_base</p>
 <p class="page_index";front-size:40px>有什么想说的可以写邮件到：v72006@outlook.com</p>
     <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">更新说明</a>
     <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>

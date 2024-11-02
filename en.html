@@ -32,11 +32,11 @@
     <div ></div>
     <div ></div>
     <select id="languageSwitcher">
-    
+        <option value="en">English</option>
         <option value="cn">简体中文</option>
     
     
-        <option value="en">English</option>
+        
         <!--//Add more language options here-->
         <option value="jp">日本語</option>
         
@@ -49,8 +49,11 @@
     <script>            
         $(document).ready(function() {
             $("#languageSwitcher").change(function() {
+                if (language=="cn"){windows.location.href="index.html";}
                 var language = $(this).val();
                 window.location.href = language + ".html";
+                $("#languageSwitcher").val(language);
+            
             });
         });
     </script>
@@ -59,10 +62,10 @@
     
     <p>Build time：2022</p>
     <p>Upgrade time：2024-11-02</p>
-    <p>Version:0.4.15.20241102_base</p>
+    <p>Version:0.4.16.20241102_base</p>
     <p class="page_index";front-size:40px>Any questions pleasewrite to：v72006@outlook.com</p>
-        <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">更新说明</a>
-        <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
+        <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">Upgrade log</a>
+        <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">Language test</a>
         
     </div>
     <body>

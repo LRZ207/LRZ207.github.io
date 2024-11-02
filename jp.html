@@ -1,17 +1,17 @@
 <style>
-    /*--预设--*/ 
+    /*--全局--*/ 
     body { padding:0px;margin: 0px; } 
     #lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
     #lyrow { height:100vh;width: 100vw; } 
     #lyrow div { min-height: 18px;  } 
     #lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
     #lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
-    /*--编辑--*/ 
+    /*--主体--*/ 
     #lyrow .mainbody { padding:170px 0 0 0;display:inline !important;overflow-x:auto;overflow-y:auto;position:undefined;z-index:undefined;background:undefined;filter:undefined; } 
     #lyrow .mainbody::-webkit-scrollbar { display:none; } 
     
     </style>
-    <!--下载font-awesome.css图标包-->
+    
     <!--https://www.58html.com/html/template/font-awesome.zip-->
     <link rel="stylesheet" href="https://www.58html.com/gui/css/font-awesome/css/font-awesome.css">
     <div id="lyrow">
@@ -33,25 +33,27 @@
     <div ></div>
     <div ></div>
     <select id="languageSwitcher">
-    
+        <option value="jp">日本語</option>
         <option value="cn">简体中文</option>
     
     
         <option value="en">English</option>
         
-        <option value="jp">日本語</option>
+        
         
         <option value="de">Deutsch</option>
     
     
     
     </select>
-    
     <script>            
         $(document).ready(function() {
             $("#languageSwitcher").change(function() {
+                if (language=="cn"){windows.location.href="index.html";}
                 var language = $(this).val();
                 window.location.href = language + ".html";
+                $("#languageSwitcher").val(language);
+            
             });
         });
     </script>
@@ -60,7 +62,7 @@
     
     <p>設立年月日：2022</p>
     <p>更新日：2024-11-02</p>
-    <p>Version:0.4.15.20241102_base</p>
+    <p>Version:0.4.16.20241102_base</p>
     <p class="page_index";front-size:40px>何か言いたいことがあれば、メールを書いてください：v72006@outlook.com</p>
         <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">アップデートノート</a>
         <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
