@@ -1,17 +1,17 @@
 <style>
-    /*--prepare---*/ 
+    /*--预设--*/ 
     body { padding:0px;margin: 0px; } 
     #lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
     #lyrow { height:100vh;width: 100vw; } 
     #lyrow div { min-height: 18px;  } 
     #lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
     #lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
-    /*--edit--*/ 
+    /*--编辑--*/ 
     #lyrow .mainbody { padding:170px 0 0 0;display:inline !important;overflow-x:auto;overflow-y:auto;position:undefined;z-index:undefined;background:undefined;filter:undefined; } 
     #lyrow .mainbody::-webkit-scrollbar { display:none; } 
     
     </style>
-    <!--download button-->
+    <!--下载font-awesome.css图标包-->
     <!--https://www.58html.com/html/template/font-awesome.zip-->
     <link rel="stylesheet" href="https://www.58html.com/gui/css/font-awesome/css/font-awesome.css">
     <div id="lyrow">
@@ -19,9 +19,9 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>Loading...</title>
-        <meta name="keywords" content="Characters,">
-        <meta name="description" content="description">
+        <title>已载入</title>
+        <meta name="keywords" content="关键词，关键字">
+        <meta name="description" content="描述信息">
         <meta name="lrz" content="402rd">
         
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
@@ -32,12 +32,12 @@
     <div ></div>
     <div ></div>
     <select id="languageSwitcher">
-        <option value="en">English</option>
+    
         <option value="cn">简体中文</option>
     
     
-        
-        <!--//Add more language options here-->
+        <option value="en">English</option>
+        <!--//添加更多语言选项-->
         <option value="jp">日本語</option>
         
         <option value="de">Deutsch</option>
@@ -45,51 +45,59 @@
     
     
     </select>
-    <!--When the language switcher is changed, the page is reloaded with the new language-->
+    <!--当语言选项被点击打开对应语言的页面文件并将语言选项改为选中状态-->
+    
     <script>            
         $(document).ready(function() {
             $("#languageSwitcher").change(function() {
-                
                 var language = $(this).val();
+                //选中“简体中文时”打开index.html
                 if (language =="cn") {
-                window.location.href = "index.html";
-            }else{
-                location.href = language + ".html";
-            }
-            
+                    window.location.href = "index.html";
+                }else{
+                    location.href = language + ".html";
+                }
+                
+                //修改languageSwitcher的内容为language
+                
+    
+    
             });
         });
     </script>
     
     
     
-    <p>Build time：2022</p>
-    <p>Upgrade time：2024-11-02</p>
+    
+    
+    
+    <p>建立日期：2022</p>
+    <p>更新日期：2024-11-02</p>
     <p>Version:0.4.18.20241102_base</p>
-    <p class="page_index";front-size:40px>Any questions pleasewrite to：v72006@outlook.com</p>
-        <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">Upgrade log</a>
-        <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">Language test</a>
+    <p class="page_index";front-size:40px>有什么想说的可以写邮件到：v72006@outlook.com</p>
+        <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">更新说明</a>
+        <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
         
     </div>
     <body>
         
         
             <script type="text/javascript ">
-                //Get the online status of the user
+                //获取当前网络状态
                 　　
                 var state = window.navigator.onLine;　　
                 if (state) {　　　　
-                    alert("Hello,you are online ");　　
+                    alert("您好，当前处于联网状态 ");　　
                 } else {　　　　
-                    alert("Now,you are not online ,please check your network ");　
-                }　　 //While the user is online, the ononline event is triggered.
+                    alert("当前处于断网状态，请修复连接 ");　
+                }　　 //当联网的时候触发该事件
                 　　
                 window.ononline = function() {　　　　
-                        alert("Network connection is back ");　　
-                    }　　 //while the user is notonline ,the onoffline event is triggered.
+                        alert("网络正常 ");　　
+                    }　　 //当断网的时候触发该事件
                     　　
                 window.onoffline = function() {　　　　
-                        alert(" Network connection is lost  ");　　
+                        alert("网络连接已断开，请重新连接 ");　　
                     }
                     
                 $.ajax({
@@ -103,7 +111,7 @@
     
     
                 function nothingFunction() {
-                    alert("Nothing function! ")
+                    alert("什么都不会发生就怪了。 ")
                 };
             </script>
     
