@@ -285,16 +285,15 @@ th{
                     break;
                 }
             }
-            //随机播放背景音乐
-            var bgmnumx = Math.floor(Math.random() * bgmnum) + 1;
-            bgmnumx = bgmnumx + 1;
-            bgmnumx = bgmnumx % bgmnum + 1;
-            bgm = document.createElement("audio");
+            //从backgroud1.mp3开始播放
+            var bgmnumx = 1;
+            var bgm = document.getElementById("bgm");
             bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
-            bgm.autoplay = true;
-            bgm.loop = true;
-            document.body.appendChild(bgm);
-            //添加暂停，继续播放按钮并以浮动框形式呈现
+            bgm.play();
+
+        
+           
+            //创建暂停按钮并将其添加到页面上
             var pauseBtn = document.createElement("button");
             pauseBtn.innerHTML = "暂停";
             pauseBtn.style.position = "fixed";
@@ -308,33 +307,43 @@ th{
             pauseBtn.style.fontSize = "18px";
             pauseBtn.style.zIndex = "9999";
             pauseBtn.onclick = function() {
-                if (bgm.paused) {
-                    bgm.play();
-                    pauseBtn.innerHTML = "暂停";
-                } else {
-                    bgm.pause();
-                    pauseBtn.innerHTML = "继续";
-                }
+                bgm.pause();
             };
             document.body.appendChild(pauseBtn);
-            //添加音量控制按钮并以浮动框形式呈现
-            var volumeBtn = document.createElement("button");
-            volumeBtn.innerHTML = "音量";
-            volumeBtn.style.position = "fixed";
-            volumeBtn.style.top = "50%";
-            volumeBtn.style.right = "50%";
-            volumeBtn.style.transform = "translate(50%, -50%)";
-            volumeBtn.style.backgroundColor = "red";
-            volumeBtn.style.color = "white";
-            volumeBtn.style.padding = "10px";
-            volumeBtn.style.borderRadius = "5px";
-            volumeBtn.style.fontSize = "18px";
-            volumeBtn.style.zIndex = "9999";
-            volumeBtn.onclick = function() {
-                bgm.volume = bgm.volume? 0 : 1;
+            //创建播放按钮并将其添加到页面上
+            var playBtn = document.createElement("button");
+            playBtn.innerHTML = "播放";
+            playBtn.style.position = "fixed";
+            playBtn.style.top = "50%";
+            playBtn.style.left = "50%";
+            playBtn.style.transform = "translate(-50%, -50%)";
+            playBtn.style.backgroundColor = "red";
+            playBtn.style.color = "white";
+            playBtn.style.padding = "10px";
+            playBtn.style.borderRadius = "5px";
+            playBtn.style.fontSize = "18px";
+            playBtn.style.zIndex = "9999";
+            playBtn.onclick = function() {
+                bgm.play();
             };
-            document.body.appendChild(volumeBtn);
-            //添加切换下一首按钮，并将变量bgmnumx的值加1，使播放下一首歌曲
+            document.body.appendChild(playBtn); 
+            //创建显示当前时间的函数并将其添加到页面上
+            function showTime() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                var str = year + "年" + month + "月" + day + "日" + " " + hour + "时" + minute + "分" + second + "秒";
+                document.getElementById("time").innerHTML = str;
+            }
+            setInterval(showTime, 1000);
+
+            
+
+            //创建切换下一首按钮并将其添加到页面上
             var nextBtn = document.createElement("button");
             nextBtn.innerHTML = "下一首";
             nextBtn.style.position = "fixed";
@@ -354,7 +363,10 @@ th{
                 bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
             };
             document.body.appendChild(nextBtn);
-            //添加上一首按钮
+
+            //创建切换下一首按钮的点击事件并实现播放下一首歌曲
+
+            //创建切换下一首按钮的点击事件并实现播放上一首歌曲
             var prevBtn = document.createElement("button");
             prevBtn.innerHTML = "上一首";
             prevBtn.style.position = "fixed";
@@ -374,31 +386,32 @@ th{
                 bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
             };
             document.body.appendChild(prevBtn);
-            //显示数据
-            function displayData(data) {
-                var str = "";
-                for (var i = 0; i < data.length; i++) {
-                    str += data[i].name + " " + data[i].age + " " + data[i].gender + "<br>";
-                }
-                document.getElementById("test").innerHTML = str;
-                }
-           
 
+            
+            
 
-            //显示当前时间
-            function showTime() {
-                var date = new Date();
-                var year = date.getFullYear();
-                var month = date.getMonth() + 1;
-                var day = date.getDate();
-                var hour = date.getHours();
-                var minute = date.getMinutes();
-                var second = date.getSeconds();
-                var str = year + "年" + month + "月" + day + "日" + " " + hour + "时" + minute + "分" + second + "秒";
-                document.getElementById("time").innerHTML = str;
-            }
-            setInterval(showTime, 1000);
+            document.body.appendChild(pauseBtn);
+            //添加音量控制按钮并以浮动框形式呈现
+            var volumeBtn = document.createElement("button");
+            volumeBtn.innerHTML = "音量";
+            volumeBtn.style.position = "fixed";
+            volumeBtn.style.top = "50%";
+            volumeBtn.style.right = "50%";
+            volumeBtn.style.transform = "translate(50%, -50%)";
+            volumeBtn.style.backgroundColor = "red";
+            volumeBtn.style.color = "white";
+            volumeBtn.style.padding = "10px";
+            volumeBtn.style.borderRadius = "5px";
+            volumeBtn.style.fontSize = "18px";
+            volumeBtn.style.zIndex = "9999";
+            volumeBtn.onclick = function() {
+                bgm.volume = bgm.volume? 0 : 1;
+            };
+            document.body.appendChild(volumeBtn);
+            //添加切换下一首按钮，并将变量bgmnumx的值加1，使播放下一首歌曲
+            
            
+            
 
             function aaa() {
                 alert("你点了没用，我只是测试一下。 ")}
