@@ -7,16 +7,162 @@
     
     <html lang="zh-CN">
 <style>
-/*--预设--*/ 
-body { padding:0px;margin: 0px; } 
-#lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
-#lyrow { height:100vh;width: 100vw; } 
-#lyrow div { min-height: 18px;  } 
-#lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
-#lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
-/*--编辑--*/ 
-#lyrow .mainbody { padding:170px 0 0 0;display:inline !important;overflow-x:auto;overflow-y:auto;position:undefined;z-index:undefined;background:undefined;filter:undefined; } 
-#lyrow .mainbody::-webkit-scrollbar { display:none; } 
+<!--设置页面整体字体大小-->
+body{
+    font-size: 16px;
+}
+<!--设置标题大小-->
+h1{
+    font-size: 36px;
+}
+<!--设置标题颜色-->
+h1{
+    color: #333;
+}
+<!--设置段落颜色-->
+p{
+    color: #666;
+}
+<!--设置链接颜色-->
+a{
+    color: #333;
+}
+<!--设置链接下划线-->
+a:hover{
+    text-decoration: underline;
+}
+<!--设置图片边框-->
+img{
+    border: 1px solid #ccc;
+}
+<!--设置图片宽度-->
+img{
+    max-width: 100%;
+}
+<!--设置图片居中-->
+.center{
+    display: block;
+    margin: 0 auto;
+}
+<!--设置列表样式-->
+ul{
+    list-style: disc;
+    padding-left: 20px;
+}
+<!--设置列表颜色-->
+li{
+    color: #666;
+}
+<!--设置代码块样式-->
+pre{
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 10px 0;
+}
+<!--设置代码块行号-->
+pre{
+    counter-reset: line;
+}
+pre code{
+    counter-increment: line;
+}
+pre code::before{
+    content: counter(line);
+    display: inline-block;
+    width: 2em;
+    margin-right: 0.5em;
+    color: #ccc;
+    text-align: right;
+}
+<!--设置按钮样式-->
+button{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+<!--设置按钮悬停样式-->
+button:hover{
+    background-color: #666;
+}
+<!--设置表格样式-->
+table{
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+<!--设置表格边框-->
+th, td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+<!--设置表格标题样式-->
+th{
+    background-color: #f5f5f5;
+}
+<!--设置分页样式-->
+.pagination{
+    display: inline-block;
+}
+.pagination a{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.pagination a.active{
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+.pagination a:hover:not(.active){
+    background-color: #ddd;
+}
+<!--设置标签云样式-->
+.tagcloud{
+    margin: 10px 0;
+}
+.tagcloud a{
+    display: inline-block;
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    text-decoration: none;
+}
+.tagcloud a:hover{
+    background-color: #333;
+    color: #fff;
+}
+<!--设置标签云颜色-->
+.tagcloud a{
+    background-color: #f5f5f5;
+}
+<!--设置标签云悬停样式-->
+.tagcloud a:hover{
+    background-color: #333;
+    color: #fff;
+}
+<!--设置标签云字体大小-->
+.tagcloud a{
+    font-size: 14px;
+}
+<!--设置标签云行高-->
+.tagcloud a{
+    line-height: 20px;
+}
+<!--设置标签云间距-->
+.tagcloud a{
+    margin: 5px;
+}
 
 </style>
 <!--下载font-awesome.css图标包-->
@@ -84,7 +230,7 @@ body { padding:0px;margin: 0px; }
 
 <p>建立日期：2022</p>
 <p>更新日期：2024-11-03</p>
-<p>Version:0.4.19.20241103_base</p>
+<p>Version:0.5.2.20241103_base</p>
 <p class="page_index";front-size:40px>有什么想说的可以写邮件到：v72006@outlook.com</p>
     <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">更新说明</a>
     <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
@@ -142,7 +288,7 @@ body { padding:0px;margin: 0px; }
             bgmnumx = bgmnumx + 1;
             bgmnumx = bgmnumx % bgmnum + 1;
             bgm = document.createElement("audio");
-            bgm.src = "res/background" + bgmnumx + ".mp3";
+            bgm.src = "https://lrz207.github.io/res/sounds/background" + bgmnumx + ".mp3";
             bgm.autoplay = true;
             bgm.loop = true;
             document.body.appendChild(bgm);
@@ -203,7 +349,7 @@ body { padding:0px;margin: 0px; }
                 if (bgmnumx > bgmnum) {
                     bgmnumx = 1;
                 }
-                bgm.src = "res/background" + bgmnumx + ".mp3";
+                bgm.src = "https://lrz207.github.io/res/sounds/background" + bgmnumx + ".mp3";
             };
             document.body.appendChild(nextBtn);
             //添加上一首按钮
@@ -223,7 +369,7 @@ body { padding:0px;margin: 0px; }
                 if (bgmnumx < 1) {
                     bgmnumx = bgmnum;
                 }
-                bgm.src = "https://lrz207.github.io/htmls/res/background/sounds" + bgmnumx + ".mp3";
+                bgm.src = "https://lrz207.github.io/res/background/sounds" + bgmnumx + ".mp3";
             };
             document.body.appendChild(prevBtn);
             //显示数据
