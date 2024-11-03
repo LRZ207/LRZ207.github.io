@@ -274,10 +274,12 @@ th{
                 alert("什么都不会发生就怪了。 ")
             };
             //添加背景音乐，打开res目录下的background.mp3文件
-            //获得res目录下文件数
+            //获得res/sounds目录下文件数
+
+            //获取res/sounds目录下文件数
             var bgmnum = 0;
             for (var i = 1; i < 100; i++) {
-                if (document.getElementById("https://lrz207.github.io/htmls/res/background/sounds" + i + ".mp3")) {
+                if (document.getElementById("https://lrz207.github.io/htmls/res/sounds/background" + i + ".mp3")) {
                     bgmnum++;
                 } else {
                     break;
@@ -288,7 +290,7 @@ th{
             bgmnumx = bgmnumx + 1;
             bgmnumx = bgmnumx % bgmnum + 1;
             bgm = document.createElement("audio");
-            bgm.src = "https://lrz207.github.io/res/sounds/background" + bgmnumx + ".mp3";
+            bgm.src = "https://lrz207.github.io/htmls/res/sounds/background" + bgmnumx + ".mp3";
             bgm.autoplay = true;
             bgm.loop = true;
             document.body.appendChild(bgm);
@@ -349,7 +351,7 @@ th{
                 if (bgmnumx > bgmnum) {
                     bgmnumx = 1;
                 }
-                bgm.src = "https://lrz207.github.io/res/sounds/background" + bgmnumx + ".mp3";
+                bgm.src = "https://lrz207.github.io/htmls/res/sounds/background" + bgmnumx + ".mp3";
             };
             document.body.appendChild(nextBtn);
             //添加上一首按钮
@@ -369,7 +371,7 @@ th{
                 if (bgmnumx < 1) {
                     bgmnumx = bgmnum;
                 }
-                bgm.src = "https://lrz207.github.io/res/background/sounds" + bgmnumx + ".mp3";
+                bgm.src = "https://lrz207.github.io/htmls/res/sounds/background" + bgmnumx + ".mp3";
             };
             document.body.appendChild(prevBtn);
             //显示数据
@@ -380,6 +382,22 @@ th{
                 }
                 document.getElementById("test").innerHTML = str;
                 }
+           
+
+
+            //显示当前时间
+            function showTime() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                var str = year + "年" + month + "月" + day + "日" + " " + hour + "时" + minute + "分" + second + "秒";
+                document.getElementById("time").innerHTML = str;
+            }
+            setInterval(showTime, 1000);
            
 
             function aaa() {
