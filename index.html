@@ -305,20 +305,9 @@ th{
                 bgm.pause();
             };
             document.body.appendChild(pauseBtn);
-            //添加音量调节滑条
-            var volumeBtn = document.createElement("input");
-            volumeBtn.type = "range";
-            volumeBtn.min = "0";
-            volumeBtn.max = "1";
-            volumeBtn.step = "0.1";
-            volumeBtn.value = "0.5";
-            volumeBtn.style.position = "fixed";
-            volumeBtn.style.bottom = "50px";
-            volumeBtn.style.right = "100px";
-            volumeBtn.style.zIndex = "9999";
-            volumeBtn.oninput = function() {
-                bgm.volume = this.value;
-            }
+            
+
+
             //创建播放按钮并将其添加到页面上
             var playBtn = document.createElement("button");
             playBtn.innerHTML = "播放";
@@ -349,52 +338,57 @@ th{
                 document.getElementById("time").innerHTML = str;
             }
             setInterval(showTime, 1000);
+                // 创建按钮的函数，避免重复代码
+                function createButton(text, position, callbackFunction, color = "red") {
+                var btn = document.createElement("button");
+                btn.innerHTML = text;
+                btn.style.position = "fixed";
+                btn.style.backgroundColor = color;
+                btn.style.color = "white";
+                btn.style.padding = "10px";
+                btn.style.borderRadius = "5px";
+                btn.style.fontSize = "18px";
+                btn.style.zIndex = "9999";
+    
+                // 设置位置
+                if (position === "next") {
+                btn.style.bottom = "50px";
+                btn.style.right = "50px";
+                } else if (position === "prev") {
+                btn.style.bottom = "50px";
+                btn.style.left = "50px";
+                }
+
+                // 添加点击事件
+                btn.onclick = callbackFunction;
+    
+                document.body.appendChild(btn);
+                return btn;
+                }   
+
+                // 创建切换下一首按钮并将其添加到页面上
+                createButton("下一首", "next", function() {
+                bgmnumx++;
+                if (bgmnumx > bgmnum) {
+                bgmnumx = 1; // 循环到第一首
+                }           
+                bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
+                bgm.play(); // 播放切换后的音频
+                });
+
+                // 创建切换上一首按钮的点击事件并实现播放上一首歌曲
+                createButton("上一首", "prev", function() {
+                bgmnumx--;
+                if (bgmnumx < 1) {
+                bgmnumx = bgmnum; // 循环到最后一首
+                }
+                bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
+                bgm.play(); // 播放切换后的音频
+                });
 
             
 
-            //创建切换下一首按钮并将其添加到页面上
-            var nextBtn = document.createElement("button");
-            nextBtn.innerHTML = "下一首";
-            nextBtn.style.position = "fixed";
-            nextBtn.style.bottom = "50px";
-            nextBtn.style.right = "50px";
-            nextBtn.style.backgroundColor = "red";
-            nextBtn.style.color = "white";
-            nextBtn.style.padding = "10px";
-            nextBtn.style.borderRadius = "5px";
-            nextBtn.style.fontSize = "18px";
-            nextBtn.style.zIndex = "9999";
-            nextBtn.onclick = function() {
-                bgmnumx++;
-                if (bgmnumx > bgmnum) {
-                    bgmnumx = 1;
-                }
-                bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
-            };
-            document.body.appendChild(nextBtn);
 
-         
-
-            //创建切换上一首按钮的点击事件并实现播放上一首歌曲
-            var prevBtn = document.createElement("button");
-            prevBtn.innerHTML = "上一首";
-            prevBtn.style.position = "fixed";
-            prevBtn.style.bottom = "50px";
-            prevBtn.style.left = "50px";
-            prevBtn.style.backgroundColor = "red";
-            prevBtn.style.color = "white";
-            prevBtn.style.padding = "10px";
-            prevBtn.style.borderRadius = "5px";
-            prevBtn.style.fontSize = "18px";
-            prevBtn.style.zIndex = "9999";
-            prevBtn.onclick = function() {
-                bgmnumx--;
-                if (bgmnumx < 1) {
-                    bgmnumx = bgmnum;
-                }
-                bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
-            };
-            document.body.appendChild(prevBtn);
 
             
             
