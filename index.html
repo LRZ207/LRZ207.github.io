@@ -274,13 +274,15 @@ margin: 5px;
     function nothingFunction() {
         alert("什么都不会发生就怪了。 ")
     };
-    </body>
+</script>
+
+</body>
     
     
         
             
- <script>       
-        //从res/sounds下第一首开始播放
+<script>   
+        //创建背景音乐并播放
         var bgmnum = 5;
         var bgmnumx = 1;
         var bgm = document.createElement("audio");
@@ -401,7 +403,7 @@ margin: 5px;
             volumeBtn.style.borderRadius = "5px";
             volumeBtn.style.fontSize = "18px";
             volumeBtn.style.zIndex = "9999";
-            volumeBtn.onclick = function() {
+            voumeBtn.onclick = function() {
                 bgm.volume = bgm.volume? 0 : 1;
             };
             document.body.appendChild(volumeBtn);

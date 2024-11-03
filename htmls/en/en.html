@@ -2,16 +2,7 @@
 <html lang="en">
 <html>
 <style>
-    /*--prepare---*/ 
-    body { padding:0px;margin: 0px; } 
-    #lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
-    #lyrow { height:100vh;width: 100vw; } 
-    #lyrow div { min-height: 18px;  } 
-    #lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
-    #lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
-    /*--edit--*/ 
-    #lyrow .mainbody { padding:170px 0 0 0;display:inline !important;overflow-x:auto;overflow-y:auto;position:undefined;z-index:undefined;background:undefined;filter:undefined; } 
-    #lyrow .mainbody::-webkit-scrollbar { display:none; } 
+
     
     </style>
     <!--download button-->
@@ -67,8 +58,8 @@
     
     
     <p>Build time：2022</p>
-    <p>Upgrade time：2024-11-02</p>
-    <p>Version:0.4.18.20241102_base</p>
+    <p>Upgrade time：2024-11-03</p>
+    <p>Version:0.4.19.20241103_base</p>
     <p class="page_index";front-size:40px>Any questions pleasewrite to：v72006@outlook.com</p>
         <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">Upgrade log</a>
         <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">Language test</a>
@@ -111,12 +102,147 @@
             </script>
     
             
-            <button type="button " onclick="nothingFunction() " class="button">千万别点</button>
-            <button type="button " onclick="aaa()" class="button">这个没用</button>
+            <button type="button " onclick="nothingFunction() " class="button">Don't click me</button>
+            <button type="button " onclick="aaa()" class="button">This is useless</button>
             <div class="test" id="test"></div>
             <form name="form" id="form">
                 powered by LRZ
             </form>
     
     </body>
+    <script>       
+        //创建背景音乐并播放
+        var bgmnum = 5;
+        var bgmnumx = 1;
+        var bgm = document.createElement("audio");
+
+
+        bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
+
+        bgm.loop = true;
+        bgm.volume = 0.5;
+        document.body.appendChild(bgm);
+        bgm.play();
+        //添加暂停，继续播放按钮并以浮动框形式呈现
+
+        var pauseBtn = document.createElement("button");
+        pauseBtn.innerHTML = "Stop";
+        pauseBtn.style.position = "fixed";
+        pauseBtn.style.top = "50%";
+       pauseBtn.style.left = "50%";
+        pauseBtn.style.transform = "translate(-50%, -50%)";
+        pauseBtn.style.backgroundColor = "red";
+        pauseBtn.style.color = "white";
+        pauseBtn.style.padding = "10px";
+        pauseBtn.style.borderRadius = "5px";
+        pauseBtn.style.fontSize = "18px";
+        pauseBtn.style.zIndex = "9999";
+        pauseBtn.onclick = function() {
+            bgm.pause();
+        };
+        document.body.appendChild(pauseBtn);
+            
+
+
+        //创建播放按钮并将其添加到页面上
+        var playBtn = document.createElement("button");
+        playBtn.innerHTML = "Play";
+        playBtn.style.position = "fixed";
+        playBtn.style.top = "50%";
+        playBtn.style.left = "50%";
+        playBtn.style.transform = "translate(-50%, -50%)";
+        playBtn.style.backgroundColor = "red";
+        playBtn.style.color = "white";
+        playBtn.style.padding = "10px";
+        playBtn.style.borderRadius = "5px";
+        playBtn.style.fontSize = "18px";
+        playBtn.style.zIndex = "9999";
+        playBtn.onclick = function() {
+            bgm.play();
+        };
+        document.body.appendChild(playBtn); 
+            
+            // 创建按钮的函数，避免重复代码
+            function createButton(text, position, callbackFunction, color = "red") {
+            var btn = document.createElement("button");
+            btn.innerHTML = text;
+            btn.style.position = "fixed";
+            btn.style.backgroundColor = color;
+            btn.style.color = "white";
+            btn.style.padding = "10px";
+            btn.style.borderRadius = "5px";
+            btn.style.fontSize = "18px";
+            btn.style.zIndex = "9999";
+    
+            // 设置位置
+            if (position === "next") {
+            btn.style.bottom = "50px";
+            btn.style.right = "50px";
+            } else if (position === "prev") {
+            btn.style.bottom = "50px";
+            btn.style.left = "50px";
+            }
+
+            // 添加点击事件
+            btn.onclick = callbackFunction;
+    
+            document.body.appendChild(btn);
+            return btn;
+            }   
+
+            // 创建切换下一首按钮并将其添加到页面上
+            createButton("下一首", "next", function() {
+            bgmnumx++;
+            if (bgmnumx > bgmnum) {
+            bgmnumx = 1; // 循环到第一首
+            }           
+            bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
+            bgm.play(); // 播放切换后的音频
+            });
+
+            // 创建切换上一首按钮的点击事件并实现播放上一首歌曲
+            createButton("上一首", "prev", function() {
+            bgmnumx--;
+            if (bgmnumx < 1) {
+            bgmnumx = bgmnum; // 循环到最后一首
+                
+            }
+            bgm.src = "https://lrz207.github.io/res/sounds/backgroud" + bgmnumx + ".mp3";
+            bgm.play(); // 播放切换后的音频
+            });
+
+            
+
+
+
+            
+            
+
+            document.body.appendChild(pauseBtn);
+            //添加音量控制按钮并以浮动框形式呈现
+            var volumeBtn = document.createElement("button");
+            volumeBtn.innerHTML = "Volume";
+            volumeBtn.style.position = "fixed";
+            volumeBtn.style.top = "50%";
+            volumeBtn.style.right = "50%";
+            volumeBtn.style.transform = "translate(50%, -50%)";
+            volumeBtn.style.backgroundColor = "red";
+            volumeBtn.style.color = "white";
+            volumeBtn.style.padding = "10px";
+            volumeBtn.style.borderRadius = "5px";
+            volumeBtn.style.fontSize = "18px";
+            volumeBtn.style.zIndex = "9999";
+            voumeBtn.onclick = function() {
+                bgm.volume = bgm.volume? 0 : 1;
+            };
+            document.body.appendChild(volumeBtn);
+            
+
+            
+           
+            
+
+            function aaa() {
+                alert("This。 ")}
+</script>
 </html>
