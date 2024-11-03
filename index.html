@@ -1,5 +1,11 @@
-<!--设置html版本-->
+<!--设置html版本为最新版-->
+<!--<!DOCTYPE html>-->
 <!DOCTYPE html>
+
+
+<html>
+    
+    <html lang="zh-CN">
 <style>
 /*--预设--*/ 
 body { padding:0px;margin: 0px; } 
@@ -57,7 +63,10 @@ body { padding:0px;margin: 0px; }
             if (language =="cn") {
                 window.location.href = "index.html";
             }else{
-                location.href = language + ".html";
+            //打开htmls目录下对应language目录下的语言文件
+
+                
+                location.href = "https://lrz207.github.io/htmls/"+language+"/"+language + ".html";
             }
             
             //修改languageSwitcher的内容为language
@@ -74,11 +83,14 @@ body { padding:0px;margin: 0px; }
 
 
 <p>建立日期：2022</p>
-<p>更新日期：2024-11-02</p>
-<p>Version:0.4.18.20241102_base</p>
+<p>更新日期：2024-11-03</p>
+<p>Version:0.4.19.20241103_base</p>
 <p class="page_index";front-size:40px>有什么想说的可以写邮件到：v72006@outlook.com</p>
     <a  href="https://lrz207.github.io/htmls/update.html" target="_blank">更新说明</a>
     <a  href="https://lrz207.github.io/htmls/test.html" target="_blank">语言测试</a>
+    <!--打开新页面“文本加密工具”-->
+    
+    
     
 </div>
 <body>
@@ -126,3 +138,4 @@ body { padding:0px;margin: 0px; }
         </form>
 
 </body>
+</html>
