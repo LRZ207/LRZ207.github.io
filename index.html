@@ -325,19 +325,7 @@ th{
                 bgm.play();
             };
             document.body.appendChild(playBtn); 
-            //创建显示当前时间的函数并将其添加到页面上
-            function showTime() {
-                var date = new Date();
-                var year = date.getFullYear();
-                var month = date.getMonth() + 1;
-                var day = date.getDate();
-                var hour = date.getHours();
-                var minute = date.getMinutes();
-                var second = date.getSeconds();
-                var str = year + "年" + month + "月" + day + "日" + " " + hour + "时" + minute + "分" + second + "秒";
-                document.getElementById("time").innerHTML = str;
-            }
-            setInterval(showTime, 1000);
+            
                 // 创建按钮的函数，避免重复代码
                 function createButton(text, position, callbackFunction, color = "red") {
                 var btn = document.createElement("button");
