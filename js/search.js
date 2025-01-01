@@ -1,15 +1,3 @@
-// 添加搜索框以来获得想要搜素的内容并在页面显示搜索结果
-
-// 引入搜索框的js文件
-// <script src="js/search.js"></script>
-
-// 在HTML文件中添加搜索框
-// <input type="text" id="search-input" placeholder="Search...">
-
-// 在HTML文件中添加搜索结果的容器
-// <div id="search-results"></div>
-
-// 在search.js文件中添加以下代码：
 
 // 获取搜索框和搜索结果容器
 const searchInput = document.getElementById("search-input");
